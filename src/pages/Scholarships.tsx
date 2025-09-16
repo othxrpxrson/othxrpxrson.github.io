@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -17,6 +18,7 @@ interface Scholarship {
 }
 
 export const Scholarships = () => {
+  const navigate = useNavigate();
   const scholarships: Scholarship[] = [
     {
       id: "1",
@@ -94,7 +96,7 @@ export const Scholarships = () => {
       
       <main className="px-6 py-8 max-w-6xl mx-auto">
         <div className="flex items-center mb-6">
-          <Button variant="ghost" size="icon" className="mr-3">
+          <Button variant="ghost" size="icon" className="mr-3" onClick={() => navigate("/")}>
             <ArrowLeft className="h-5 w-5" />
           </Button>
           <div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Header } from "@/components/Header";
 import { 
@@ -14,6 +15,7 @@ import {
 
 export const Dashboard = () => {
   const [userPoints] = useState(125);
+  const navigate = useNavigate();
 
   const features = [
     {
@@ -21,35 +23,35 @@ export const Dashboard = () => {
       description: "Borrow calculators, lab equipment, cables, and study materials from the university library",
       icon: BookOpen,
       isPremium: false,
-      action: () => console.log("Navigate to lending")
+      action: () => navigate("/lending")
     },
     {
       title: "Campus Resources",
       description: "Find libraries, labs, writing centers, and other campus facilities with hours and locations",
       icon: MapPin,
       isPremium: false,
-      action: () => console.log("Navigate to resources")
+      action: () => navigate("/resources")
     },
     {
       title: "Scholarship Directory",
       description: "Browse available scholarships and funding opportunities with application links",
       icon: GraduationCap,
       isPremium: false,
-      action: () => console.log("Navigate to scholarships")
+      action: () => navigate("/scholarships")
     },
     {
       title: "Points & Rewards",
       description: "Track your points earned from app activities and see available rewards",
       icon: Star,
       isPremium: false,
-      action: () => console.log("Navigate to points")
+      action: () => navigate("/points")
     },
     {
       title: "Campus Assistant",
       description: "Get answers to common questions about campus services and resources",
       icon: MessageCircle,
       isPremium: false,
-      action: () => console.log("Navigate to chatbot")
+      action: () => navigate("/assistant")
     },
     {
       title: "AI Study Planner",
